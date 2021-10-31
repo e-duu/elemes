@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ClassController extends Controller
+class GoalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class ClassController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.classes.index');
+        return view('pages.admin.goal.index');
     }
 
     /**
@@ -43,9 +43,9 @@ class ClassController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('pages.admin.classes.show');
+        //
     }
 
     /**

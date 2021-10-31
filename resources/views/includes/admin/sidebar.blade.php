@@ -15,7 +15,7 @@
         <!-- Nav Item - Dashboard -->
          <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ url('dashboard') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-tachometer-alt" style=""></i>
                 <span>Dashboard</span>
             </a>
         </li>
@@ -29,49 +29,55 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item {{ (request()->is('courses/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('course.index') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-book" style="font-size: 15px; width: 17px;"></i>
                 <span>Courses</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('classes/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('class.index') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-school" style=""></i>
                 <span>Classes</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('categories/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('category.index') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-tag" style="font-size: 15px; width: 16px;"></i>
                 <span>Categories</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('transactions/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('transaction.index') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-money-check" style="font-size: 12px; width: 15px;"></i>
                 <span>Transactions</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('quizzes/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('quiz.index') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-question-circle" style="font-size: 16px; width: 16px;"></i>
                 <span>Quizzes</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('users/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('user.index') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-user-circle" style="font-size: 16px; width: 16px;"></i>
                 <span>Users</span>
+            </a>
+        </li>
+        <li class="nav-item {{ (request()->is('goals/all')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ route('goal.index') }}">
+                <i class="fas fa-user-tag" style="font-size: 14px; width: 16px;"></i>
+                <span>User Goals</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('settings/all')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ route('setting.index') }}">
-                <i class="fas fa-fw fa-cog" style="font-size: 15px;"></i>
+                <i class="fas fa-fw fa-cog" style="font-size: 15px; width: 16px;"></i>
                 <span>Settings</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fas fa-times-circle"></i>
+                <i class="fas fa-times-circle" style="font-size: 16px; width: 16px;"></i>
                 <span>Log Out</span>
             </a>
         </li>
@@ -84,32 +90,32 @@
         </div> --}}
         {{-- <li class="nav-item">
             <a class="nav-link" href="{{ url('dashboard-user') }}">
-                <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-fw fa-chart-area" style=""></i>
                 <span>Progress Learning</span>
             </a>
         </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="{{ url('my-class') }}">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-table" style=""></i>
                 <span>My Class</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ url('transaction') }}">
-                <i class="fas fa-money-check" style="font-size: 12px;"></i>
+                <i class="fas fa-money-check" style="font-size: 12px;" style=""></i>
                 <span>Transactions</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ url('setting') }}">
-                <i class="fas fa-fw fa-cog" style="font-size: 15px;"></i>
+                <i class="fas fa-fw fa-cog" style=""></i>
                 <span>Settings</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ url('') }}">
-                <i class="fas fa-times-circle"></i>
+                <i class="fas fa-times-circle" style=""></i>
                 <span>Log Out</span>
             </a>
         </li> --}}

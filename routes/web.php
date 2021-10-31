@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GoalController;
 use App\Http\Controllers\QuizzController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TransactionController;
@@ -98,6 +99,7 @@ Route::prefix('/categories')->group(function () {
 
 Route::prefix('/classes')->group(function () {
     Route::get('/all', [ClassController::class, 'index'])->name('class.index');
+    Route::get('/show', [ClassController::class, 'show'])->name('class.show');
     Route::post('/create', [ClassController::class, 'store'])->name('class.store');
     Route::get('/create', [ClassController::class, 'create'])->name('class.create');
     Route::get('/edit/{id}', [ClassController::class, 'edit'])->name('class.edit');
@@ -121,6 +123,15 @@ Route::prefix('/quizzes')->group(function () {
     Route::get('/edit/{id}', [QuizzController::class, 'edit'])->name('quiz.edit');
     Route::put('/update/{id}', [QuizzController::class, 'update'])->name('quiz.update');
     Route::get('/delete/{id}', [QuizzController::class, 'destroy'])->name('quiz.delete');
+});
+
+Route::prefix('/goals')->group(function () {
+    Route::get('/all', [GoalController::class, 'index'])->name('goal.index');
+    Route::post('/create', [GoalController::class, 'store'])->name('goal.store');
+    Route::get('/create', [GoalController::class, 'create'])->name('goal.create');
+    Route::get('/edit/{id}', [GoalController::class, 'edit'])->name('goal.edit');
+    Route::put('/update/{id}', [GoalController::class, 'update'])->name('goal.update');
+    Route::get('/delete/{id}', [GoalController::class, 'destroy'])->name('goal.delete');
 });
 
 Route::prefix('/transactions')->group(function () {

@@ -1,15 +1,54 @@
 @extends('layouts.admin')
 @section('title')
-  Dashboard Admin | Courses
+  Dashboard Admin | Classes Detail
 @endsection
 @section('sub-title')
-  Courses Page
+  Classes Detail Page
 @endsection
 @section('content')
-  <!-- DataTales Example -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-header d-flex justify-content-between align-items-center py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Detail Class</h6>
+          <a href="{{ route('class.index') }}" class="btn btn-warning btn-icon-split">
+            <span class="icon text-white-50">
+              <i class="fas fa-angle-left"></i>
+            </span>
+            <span class="text">Back to Class</span>
+          </a>
+        </div>
+        <div class="card-body p-5">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="d-flex">
+              <img src="{{ asset('images/vue.png') }}" style="max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="d-flex mt-10">
+              <div class="d-flex flex-column items-center">
+                  <p class="text-dark"><b>Title :</b> Ahmad</p>
+                  <p class="text-dark"><b>Description :</b> ini description yang biasanya make lorem ipsum</p>
+                  <p class="text-dark"><b>Excerpt :</b> ini description yang biasanya ca </p>
+                  <p class="text-dark"><b>Difficulty :</b> Medium</p>
+                  <p class="text-dark"><b>Price :</b> $20.00</p>
+                  <p class="text-dark"><b>Target Audience :</b> </p>
+                  <p class="text-dark"><b>Key Features :</b> </p>
+                  <p class="text-dark"><b>Author :</b> </p>
+                  <p class="text-dark"><b>Category :</b> </p>
+              </div>
+            </div>
+            <h1 class="mt-10" style="color: #d30c55; "></h1>
+            <h5 class="lh-lg mt-3" style="color: #f17ba7;"></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-5 mb-4 text-dark">Lessons Session</h3>
+
   <div class="card shadow">
       <div class="card-header d-flex justify-content-between align-items-center py-3">
-          <h6 class="m-0 font-weight-bold text-primary">List Data Course</h6>
+          <h6 class="m-0 font-weight-bold text-primary">List Data Lesson</h6>
           <button type="button" class="btn btn-success btn-icon-split" data-toggle="modal" data-target="#exampleModal">
             <span class="icon text-white-50">
               <i class="fas fa-plus"></i>
@@ -21,55 +60,17 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title text-dark font-weight-bold" id="exampleModalLabel">Create Course</h5>
+                  <h5 class="modal-title text-dark font-weight-bold" id="exampleModalLabel">Create Lesson</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form action="{{-- route('category.store') --}}" method="POST" enctype="multipart/form-data">
+                  <form action="{{-- route('category.store') --}}" method="POST">
                   @csrf
                   <div class="form-group">
                     <label for="helperText" class="text-dark">Title</label>
                     <input value="{{ old('name') }}" type="text" id="helperText" name="title" class="form-control" placeholder="Input class title here...">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="helperText" class="text-dark">Excerpt</label>
-                    <input value="{{ old('name') }}" type="text" id="helperText" name="excerpt" class="form-control" placeholder="Input class title here...">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Categories</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>Mobile Engineer</option>
-                      <option>Soft 2 Tonic</option>
-                      <option>Taruh</option>
-                      <option>Nadir</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Author</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>Mobile Engineer</option>
-                      <option>Soft 2 Tonic</option>
-                      <option>Taruh</option>
-                      <option>Nadir</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="helperText" class="text-dark">What Student Will Learn</label>
-                    <input value="{{ old('name') }}" type="text" id="helperText" name="learn" class="form-control" placeholder="Input class title here...">
-                  </div>
-                  <div class="form-group">
-                    <label for="helperText" class="text-dark">Participation Terms</label>
-                    <input value="{{ old('name') }}" type="text" id="helperText" name="audience" class="form-control" placeholder="Input class title here...">
-                  </div>
-                  <div class="form-group">
-                    <label for="helperText" class="text-dark">Thumbnail</label>
-                    <input value="{{ old('photo') }}" type="file" id="helperText" class="form-control" name="thumbnail" placeholder="Image">
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -86,34 +87,23 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>Author</th>
-                      <th>Category</th>
-                      <th>Type</th>
-                      <th>Price</th>
+                      <th>Class</th>
+                      <th>Slug</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>Author</th>
-                      <th>Category</th>
-                      <th>Type</th>
-                      <th>Price</th>
+                      <th>Class</th>
+                      <th>Slug</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>
-                        <img src="/images/laravel.png" style="width: 100px; border-radius: 5px;">
-                      </td>
                       <td>System Architect</td>
-                      <td>2011/04/25</td>
-                      <td>2011/04/25</td>
                       <td>61</td>
                       <td>$320,800</td>
                       <td>
@@ -137,24 +127,12 @@
                                     <td>I'm not expected, so don't expect something</td>
                                   </tr>
                                   <tr>
-                                    <th>Excerpt</th>
+                                    <th>Slug</th>
                                     <td>so don't expect something</td>
                                   </tr>
                                   <tr>
-                                    <th>Category</th>
+                                    <th>Class</th>
                                     <td>Artifical Illuminate</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Author</th>
-                                    <td>Artifical</td>
-                                  </tr>
-                                  <tr>
-                                    <th>What Student Will Learn</th>
-                                    <td>Freemium</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Participation Terms</th>
-                                    <td>Medium</td>
                                   </tr>
                                 </table>
                               </div>
@@ -174,7 +152,7 @@
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title text-dark font-weight-bold" id="exampleModalLabel">Create Course</h5>
+                                <h5 class="modal-title text-dark font-weight-bold" id="exampleModalLabel">Edit Class</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
@@ -185,44 +163,6 @@
                                 <div class="form-group">
                                   <label for="helperText" class="text-dark">Title</label>
                                   <input value="{{ old('name') }}" type="text" id="helperText" name="title" class="form-control" placeholder="Input class title here...">
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleFormControlTextarea1">Description</label>
-                                  <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                  <label for="helperText" class="text-dark">Excerpt</label>
-                                  <input value="{{ old('name') }}" type="text" id="helperText" name="excerpt" class="form-control" placeholder="Input class title here...">
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleFormControlSelect1">Categories</label>
-                                  <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Mobile Engineer</option>
-                                    <option>Soft 2 Tonic</option>
-                                    <option>Taruh</option>
-                                    <option>Nadir</option>
-                                  </select>
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleFormControlSelect1">Author</label>
-                                  <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Mobile Engineer</option>
-                                    <option>Soft 2 Tonic</option>
-                                    <option>Taruh</option>
-                                    <option>Nadir</option>
-                                  </select>
-                                </div>
-                                <div class="form-group">
-                                  <label for="helperText" class="text-dark">What Student Will Learn</label>
-                                  <input value="{{ old('name') }}" type="text" id="helperText" name="learn" class="form-control" placeholder="Input class title here...">
-                                </div>
-                                <div class="form-group">
-                                  <label for="helperText" class="text-dark">Participation Terms</label>
-                                  <input value="{{ old('name') }}" type="text" id="helperText" name="audience" class="form-control" placeholder="Input class title here...">
-                                </div>
-                                <div class="form-group">
-                                  <label for="helperText" class="text-dark">Thumbnail</label>
-                                  <input value="{{ old('photo') }}" type="file" id="helperText" class="form-control" name="thumbnail" placeholder="Image">
                                 </div>
                               </div>
                               <div class="modal-footer">

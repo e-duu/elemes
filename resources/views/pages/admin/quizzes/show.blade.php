@@ -1,12 +1,11 @@
 @extends('layouts.admin')
 @section('title')
-  Dashboard Admin | Quizzes
+  Dashboard Admin | Quizzes Detail
 @endsection
 @section('sub-title')
-  Quizzes Page
+  Quizzes Detail Page
 @endsection
 @section('content')
-  <!-- DataTales Example -->
   <div class="card shadow">
       <div class="card-header d-flex justify-content-between align-items-center py-3">
           <h6 class="m-0 font-weight-bold text-primary">List Data Quiz</h6>

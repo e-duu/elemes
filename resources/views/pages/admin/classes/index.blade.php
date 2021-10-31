@@ -190,7 +190,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Show Detail</button>
+                                <a href="{{ route('class.show') }}" type="submit" class="btn btn-primary">Show Detail</a>
                               </div>
                             </div>
                           </div>
